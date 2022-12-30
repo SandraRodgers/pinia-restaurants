@@ -1,0 +1,114 @@
+<script setup>
+import { RouterLink, RouterView } from "vue-router";
+import { storeToRefs } from "pinia";
+import { useAuthStore } from "./stores/auth.js";
+const authStore = useAuthStore();
+const { user, userFirstName } = storeToRefs(authStore);
+
+// authStore.$subscribe((mutation, state) => {
+//   console.log(state);
+// });
+
+// authStore.$onAction((details) => {
+//   console.log(details);
+// });
+
+authStore.$onAction(({ name, store, args }) => {
+  console.log(`Start "${name}" with params [${args.join(", ")}].`);
+});
+</script>
+
+<template>
+  <header>
+    <div class="wrapper">
+      <nav class="flex justify-between">
+        <div>
+          <RouterLink to="/">Home</RouterLink>
+          <RouterLink to="/about">About</RouterLink>
+        </div>
+        <div class="w-[30vw] flex justify-end">
+          <RouterLink :to="`/favorites`"
+            ><p
+              v-if="user && user.username"
+              class="flex items-center mr-4 font-semibold"
+            >
+              {{ userFirstName }}'s Favorites ❤️
+            </p></RouterLink
+          >
+          <button
+            v-if="user && user.username"
+            @click="authStore.logout()"
+            class="button button-primary"
+          >
+            Log Out
+          </button>
+          <RouterLink v-else to="/login" class="button button-primary"
+            >Sign In</RouterLink
+          >
+          <RouterLink
+            v-if="!user"
+            to="/register"
+            class="button button-secondary"
+            >Register</RouterLink
+          >
+        </div>
+      </nav>
+    </div>
+  </header>
+
+  <main class="bg-white">
+    <RouterView />
+  </main>
+</template>
+
+<style scoped>
+.button {
+  @apply mx-4;
+}
+
+/* nav a.router-link-exact-active {
+  color: var(--color-text);
+}
+
+nav a.router-link-exact-active:hover {
+  background-color: transparent;
+} */
+
+nav a {
+  @apply text-lg font-semibold;
+  display: inline-block;
+  padding: 0 1rem;
+  /* border-left: 1px solid var(--color-border); */
+}
+
+nav a:first-of-type {
+  border: 0;
+}
+
+@media (min-width: 1024px) {
+  /* header {
+    display: flex;
+    place-items: center;
+    padding-right: calc(var(--section-gap) / 2);
+  } */
+
+  /* .logo {
+    margin: 0 2rem 0 0;
+  } */
+
+  /* header .wrapper {
+    display: flex;
+    place-items: flex-start;
+    flex-wrap: wrap;
+  } */
+
+  nav {
+    /* text-align: left;
+    margin-left: -1rem; */
+    /* font-size: 1rem; */
+
+    padding: 1rem 0;
+    /* margin-top: 1rem; */
+  }
+}
+</style>

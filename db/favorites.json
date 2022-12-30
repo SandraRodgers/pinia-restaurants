@@ -1,0 +1,113 @@
+[
+    {
+        "user": "bob777",
+        "restaurant_name": "Lawry's The Prime Rib",
+        "place_id": "ChIJvaHGjyUhTIYRdYZCdME1d_U",
+        "address": "14655 Dallas Pkwy, Dallas, TX 75254, USA",
+        "phone_number": "(972) 503-6688"
+    },
+    {
+        "user": "bob777",
+        "restaurant_name": "Sushi Sakana",
+        "place_id": "ChIJ1xODt2YYTIYRaFRvjiHv_cE",
+        "address": "3000 Custer Rd #110, Plano, TX 75075, USA",
+        "phone_number": "(972) 398-1790"
+    },
+    {
+        "user": "srodg",
+        "restaurant_name": "Kitaro Sushi",
+        "place_id": "ChIJDRN9I50YTIYRI2NeGvSrzQQ",
+        "address": "2711 W 15th St, Plano, TX 75075, USA",
+        "phone_number": "(972) 596-8206"
+    },
+    {
+        "restaurant_name": "Oda Sushi",
+        "place_id": "ChIJG6uVaGIjTIYRMhlSIPUmElc",
+        "address": "6009 W Parker Rd Suite 137, Plano, TX 75093, USA",
+        "phone_number": "(469) 756-9776"
+    },
+    {
+        "user": "srodg",
+        "restaurant_name": "Sushi Sakana",
+        "place_id": "ChIJ1xODt2YYTIYRaFRvjiHv_cE",
+        "address": "3000 Custer Rd #110, Plano, TX 75075, USA",
+        "phone_number": "(972) 398-1790"
+    },
+    {
+        "user": "srodg",
+        "restaurant_name": "Primo Brothers Pizza",
+        "place_id": "ChIJJS6teuUfTIYRxl-CPVGoHIQ",
+        "address": "9310 Forest Ln # 334, Dallas, TX 75243, USA",
+        "phone_number": "(214) 341-4414"
+    },
+    {
+        "user": "srodg",
+        "restaurant_name": "Kitaro Sushi",
+        "place_id": "ChIJDRN9I50YTIYRI2NeGvSrzQQ",
+        "address": "2711 W 15th St, Plano, TX 75075, USA",
+        "phone_number": "(972) 596-8206"
+    },
+    {
+        "user": "srodg",
+        "restaurant_name": "Wasabi at Porter",
+        "place_id": "ChIJk_Qdmxd344kRfVk6FgMDA44",
+        "address": "2088 Massachusetts Ave, Cambridge, MA 02140, USA",
+        "phone_number": "(617) 945-5001"
+    },
+    {
+        "user": "srodg",
+        "restaurant_name": "Ichiro Sushi",
+        "place_id": "ChIJX3QGzY1844kRp9CzxbX1Lgs",
+        "address": "538 Adams St A, Milton, MA 02186, USA",
+        "phone_number": "(617) 698-8832"
+    },
+    {
+        "user": "srodg",
+        "restaurant_name": "The Nest Cafe",
+        "place_id": "ChIJ13jK-Y08TIYRVfsALl1OhsM",
+        "address": "7777 Warren Pkwy Suite 325, Frisco, TX 75034, USA",
+        "phone_number": "(469) 579-4790"
+    },
+    {
+        "user": "srodg",
+        "restaurant_name": "Eggsquisite Cafe",
+        "place_id": "ChIJnbl8mi89TIYRDwNONM12mQE",
+        "address": "6801 Warren Pkwy #101, Frisco, TX 75034, USA",
+        "phone_number": "(469) 200-8181"
+    },
+    {
+        "user": "srodg",
+        "restaurant_name": "Oki sushi",
+        "place_id": "ChIJv9kAl81_j4AR67N1ECZ2Z70",
+        "address": "1740 Church St, San Francisco, CA 94131, USA",
+        "phone_number": "(415) 817-1094"
+    },
+    {
+        "user": "jenny8",
+        "restaurant_name": "Shotgun Willie's BBQ",
+        "place_id": "ChIJ_9C0fVBDZIgRqyHfscV_kNA",
+        "address": "4000 Gallatin Pike Suite B, Nashville, TN 37216, USA",
+        "phone_number": "(615) 942-9188"
+    },
+    {
+        "user": "jenny8",
+        "restaurant_name": "Brother's Pizza & Pasta",
+        "place_id": "ChIJ-VPF5N2fToYRRosmCnfEU4I",
+        "address": "10455 N US 75-Central Expy 1000 #104, Dallas, TX 75231, USA",
+        "phone_number": "(214) 368-2821"
+    },
+    {
+        "user": "jenny8",
+        "restaurant_name": "Mike's Chicken",
+        "place_id": "ChIJM0QJxG4hTIYRp-x-i1VipII",
+        "address": "7752 Forest Ln, Dallas, TX 75230, USA",
+        "phone_number": "(214) 377-9692"
+    },
+    {
+        "user": "srodg",
+        "restaurant_name": "Mr. Sushi",
+        "place_id": "ChIJxeoMXDEhTIYRgfT6BvvgolM",
+        "address": "4860 Belt Line Rd, Dallas, TX 75254, USA",
+        "phone_number": "(972) 385-0168"
+    }
+]

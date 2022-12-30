@@ -1,0 +1,58 @@
+@import "./base.css";
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+#app {
+  max-width: 1280px;
+  margin: 0 auto;
+  font-weight: normal;
+  background: var(--color-background);
+  @apply h-screen;
+}
+
+.button,
+button[type="submit"] {
+  @apply flex items-center justify-center;
+  @apply py-1 px-6;
+  @apply rounded-sm;
+}
+
+.button-primary,
+button[type="submit"] {
+  @apply bg-vueGreen text-white font-bold;
+  @apply border-vueGreen border-2;
+}
+
+.button-primary:hover {
+  @apply bg-vueGreenHover;
+}
+
+.button-secondary {
+  @apply border-vueBlue border-2 text-vueBlue font-bold;
+}
+
+.button-secondary:hover {
+  @apply bg-vueBlue text-white;
+}
+
+input {
+  @apply border-slate-500 border rounded-sm;
+  @apply h-8;
+  @apply p-2;
+}
+
+h1 {
+  font-size: 4rem;
+  font-weight: 500;
+}
+
+h2 {
+  font-size: 2rem;
+  font-weight: 500;
+}
+
+h3 {
+  /* font-size: 1.rem; */
+  font-weight: 700;
+}
