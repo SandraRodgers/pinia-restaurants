@@ -46,7 +46,7 @@ watch(searchChoice, (newVal) => {
     <div class="flex items-center">
       <label class="w-20 text-lg font-semibold" for="search-city">City:</label>
       <input
-        class="w-[40rem]"
+        class="search-input"
         :placeholder="loadingMessage"
         v-model="geoLocationStore.city"
       />
@@ -64,7 +64,7 @@ watch(searchChoice, (newVal) => {
         id="search-choice"
         name="search-choice"
         placeholder="Location, restaurant, or cuisine"
-        class="w-[40rem]"
+        class="search-input"
       />
       <datalist id="search-options">
         <option value="Sushi" />
@@ -80,5 +80,9 @@ main {
   display: flex;
   flex-direction: column;
   align-items: flex-start;
+}
+
+.search-input {
+  @apply w-[20rem] xl:w-[40rem];
 }
 </style>

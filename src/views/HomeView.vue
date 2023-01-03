@@ -31,7 +31,7 @@ main {
 }
 
 .logo {
-  height: 100px;
+  @apply h-16 xl:h-24;
   padding: 0 20px;
 }
 </style>

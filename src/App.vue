@@ -21,12 +21,12 @@ authStore.$onAction(({ name, store, args }) => {
 <template>
   <header>
     <div class="wrapper">
-      <nav class="flex justify-between">
+      <nav class="flex justify-between mb-10 pt-10">
         <div>
           <RouterLink to="/">Home</RouterLink>
           <RouterLink to="/about">About</RouterLink>
         </div>
-        <div class="w-[30vw] flex justify-end">
+        <div class="w-[70vw] flex justify-end">
           <RouterLink :to="`/favorites`"
             ><p
               v-if="user && user.username"
@@ -66,19 +66,10 @@ authStore.$onAction(({ name, store, args }) => {
   @apply mx-4;
 }
 
-/* nav a.router-link-exact-active {
-  color: var(--color-text);
-}
-
-nav a.router-link-exact-active:hover {
-  background-color: transparent;
-} */
-
 nav a {
   @apply text-lg font-semibold;
   display: inline-block;
   padding: 0 1rem;
-  /* border-left: 1px solid var(--color-border); */
 }
 
 nav a:first-of-type {
@@ -86,29 +77,8 @@ nav a:first-of-type {
 }
 
 @media (min-width: 1024px) {
-  /* header {
-    display: flex;
-    place-items: center;
-    padding-right: calc(var(--section-gap) / 2);
-  } */
-
-  /* .logo {
-    margin: 0 2rem 0 0;
-  } */
-
-  /* header .wrapper {
-    display: flex;
-    place-items: flex-start;
-    flex-wrap: wrap;
-  } */
-
   nav {
-    /* text-align: left;
-    margin-left: -1rem; */
-    /* font-size: 1rem; */
-
     padding: 1rem 0;
-    /* margin-top: 1rem; */
   }
 }
 </style>

@@ -5,7 +5,6 @@ import useFetch from "../composables/useFetch";
 
 export const useAuthStore = defineStore("auth", {
   state: () => ({
-    newRegistration: ref({}),
     user: JSON.parse(localStorage.getItem("user")),
     message: ref(""),
   }),
@@ -26,7 +25,6 @@ export const useAuthStore = defineStore("auth", {
         if (res.response.value.message) {
           this.message = res.response.value.message;
         } else {
-          this.newRegistration.value = res.response.value;
           this.user = res.response.value;
           localStorage.setItem("user", JSON.stringify(this.user));
           router.push("/");
