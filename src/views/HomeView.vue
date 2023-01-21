@@ -2,10 +2,8 @@
 import Search from "../components/Search.vue";
 import RestaurantsList from "../components/RestaurantsList.vue";
 import piniaLogo from "../assets/images/pinia-logo.svg";
-import { usePlacesStore } from "../stores/places";
-import { storeToRefs } from "pinia";
-const placesStore = usePlacesStore();
-const { singlePlace, searchChoice, loading } = storeToRefs(placesStore);
+import { useRestaurantsStore } from "../stores/restaurants";
+const restaurantsStore = useRestaurantsStore();
 </script>
 
 <template>
@@ -16,7 +14,7 @@ const { singlePlace, searchChoice, loading } = storeToRefs(placesStore);
     </div>
     <Search />
     <RestaurantsList />
-    <div v-if="loading" class="flex">
+    <div v-if="restaurantsStore.loading" class="flex">
       <div class="text-2xl font-semibold pr-4">Loading...</div>
       <div class="animate-spin text-4xl">🍔</div>
     </div>

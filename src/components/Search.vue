@@ -1,17 +1,17 @@
 <script setup>
 import { watch } from "vue";
 import { useGeoLocationStore } from "../stores/geolocation";
-import { usePlacesStore } from "../stores/places";
+import { useRestaurantsStore } from "../stores/restaurants";
 import { storeToRefs } from "pinia";
 import { useDebounceFn } from "@vueuse/core";
 
 const geoLocationStore = useGeoLocationStore();
-const placesStore = usePlacesStore();
+const restaurantsStore = useRestaurantsStore();
 const { city, loadingMessage } = storeToRefs(geoLocationStore);
-const { searchChoice, placeDetails } = storeToRefs(placesStore);
+const { searchChoice, restaurantDetails } = storeToRefs(restaurantsStore);
 
-const debouncedFn = useDebounceFn((newValue) => {
-  placesStore.getPlaces();
+const debouncedFn = useDebounceFn(() => {
+  restaurantsStore.getRestaurants();
 }, 1000);
 
 function placeSearch() {
@@ -20,8 +20,8 @@ function placeSearch() {
 
 watch(city, (newVal) => {
   if (newVal) {
-    placesStore.$patch({
-      placeDetails: [],
+    restaurantsStore.$patch({
+      restaurantDetails: [],
       searchChoice: "",
     });
   }
@@ -29,14 +29,14 @@ watch(city, (newVal) => {
 
 // watch(city, (newVal) => {
 //   if (newVal) {
-//     placeDetails.value = [];
+//     restaurantDetails.value = [];
 //     searchChoice.value = "";
 //   }
 // });
 
 watch(searchChoice, (newVal) => {
   if (newVal || !searchChoice.value) {
-    placeDetails.value = [];
+    restaurantDetails.value = [];
   }
 });
 </script>
@@ -71,6 +71,15 @@ watch(searchChoice, (newVal) => {
         <option value="Pizza" />
         <option value="Breakfast" />
       </datalist>
+    </div>
+    <div class="flex justify-center mt-10">
+      <button
+        v-show="restaurantsStore.restaurantDetails.length > 0"
+        @click="restaurantsStore.resetRestaurantsStore()"
+        class="button button-primary"
+      >
+        Clear Search
+      </button>
     </div>
   </section>
 </template>

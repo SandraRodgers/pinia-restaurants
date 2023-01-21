@@ -16,7 +16,7 @@ button[type="submit"] {
   @apply flex items-center justify-center text-center;
   @apply py-1 px-6;
   @apply rounded-sm;
-  @apply h-8 w-28;
+  @apply h-8 min-w-min;
 }
 
 .button-primary,
@@ -45,7 +45,6 @@ input {
 
 h1 {
   @apply text-[3rem] xl:text-[4rem];
-  /* font-size: 4rem; */
   font-weight: 500;
 }
 
@@ -55,6 +54,5 @@ h2 {
 }
 
 h3 {
-  /* font-size: 1.rem; */
   font-weight: 700;
 }

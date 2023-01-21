@@ -2,55 +2,47 @@ import { ref, watch, computed } from "vue";
 import { defineStore } from "pinia";
 import { useGeolocation } from "@vueuse/core";
 import { useDebounceFn } from "@vueuse/core";
-import useFetch from "../composables/useFetch";
-
-const { coords } = useGeolocation();
+import myFetch from "../helpers/myFetch";
 
 export const useGeoLocationStore = defineStore("geolocation", () => {
+  const { coords } = useGeolocation();
   const city = ref("");
-  const state = ref("");
-  const zipcode = ref("");
   const latitude = ref("");
   const longitude = ref("");
 
-  // Load user location automatically
+  // Load user location automatically when they land on the page
   watch(
     () => coords.value,
     (newValue) => {
       if (newValue && !latitude.value) {
+        // when user's coordinates load, get location data to pull city name
         getLocation(coords.value.latitude, coords.value.longitude);
       }
     }
   );
-  // update to plugin like in https://github.com/posva/pinia-plugin-debounce
-  const debouncedFn = useDebounceFn((newValue) => {
-    getLatLong(newValue);
+
+  // Debounce to wait until user finishes typing
+  const debouncedFn = useDebounceFn((inputedCity) => {
+    getLatLong(inputedCity);
   }, 1000);
 
-  // When user location entered manually
+  // When user city name is entered manually, we need to trigger getLatLong (see debouncedFn above)
   watch(
     () => city.value,
-    (newValue) => {
-      if (newValue) {
+    (inputedCity) => {
+      if (inputedCity) {
         // need to debounce - don't make API call until after one second
-        debouncedFn(newValue);
+        debouncedFn(inputedCity);
       }
     }
   );
-
-  // getters
-  const loadingMessage = computed(() => {
-    if (!city.value) {
-      return "Loading your city...";
-    }
-  });
 
   // actions
 
   //get latitude/longitude when text city name entered
   async function getLatLong(location) {
     const body = { location };
-    useFetch("lat-long", "POST", body).then((res) => {
+    myFetch("lat-long", "POST", body).then((res) => {
       latitude.value = res.response.value.results[0].geometry.location.lat;
       longitude.value = res.response.value.results[0].geometry.location.lng;
       getLocation(latitude.value, longitude.value);
@@ -60,46 +52,37 @@ export const useGeoLocationStore = defineStore("geolocation", () => {
   // get city/location information when latitude/longitude entered
   async function getLocation(latitude, longitude) {
     const body = { latitude, longitude };
-    useFetch("geolocation", "POST", body).then((res) => {
+    // post to server file where request to google maps api is made
+    myFetch("geolocation", "POST", body).then((res) => {
       getCity(res.response.value.results);
     });
   }
 
   function getCity(results) {
+    // turn google maps api response into just city name
     results.forEach((element) => {
       element.address_components.forEach((element2) => {
         element2.types.forEach((element3) => {
-          switch (element3) {
-            case "postal_code":
-              zipcode.value = element2.long_name;
-              break;
-            case "administrative_area_level_1":
-              state.value = element2.long_name;
-              break;
-            case "locality":
-              city.value = element2.long_name;
-              localStorage.setItem(
-                "location",
-                JSON.stringify({
-                  city: city.value,
-                  state: state.value,
-                  zipcode: zipcode.value,
-                })
-              );
-              break;
+          if (element3 === "locality") {
+            city.value = element2.long_name;
           }
         });
       });
     });
   }
 
-  // in setup store, need to return the values to see them in devtools
+  // getters
+  const loadingMessage = computed(() => {
+    if (!city.value) {
+      return "Loading your city...";
+    }
+  });
+
+  // in setup store, we need to return the values
   return {
     getLocation,
     loadingMessage,
     city,
-    state,
-    zipcode,
     coords,
     latitude,
     longitude,

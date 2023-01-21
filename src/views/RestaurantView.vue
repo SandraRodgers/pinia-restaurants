@@ -1,38 +1,38 @@
 <script setup>
 import { useRoute } from "vue-router";
-import { usePlacesStore } from "../stores/places";
+import { useRestaurantsStore } from "../stores/restaurants";
 import { useFavoritesStore } from "../stores/favorites";
 import { storeToRefs } from "pinia";
-const placesStore = usePlacesStore();
+const restaurantsStore = useRestaurantsStore();
 const favoritesStore = useFavoritesStore();
 const route = useRoute();
-const { singlePlace, searchChoice } = storeToRefs(placesStore);
+const { singleRestaurant, searchChoice } = storeToRefs(restaurantsStore);
 
-placesStore.getSinglePlaceDetails(route.params.id);
+restaurantsStore.getSingleRestaurantDetails(route.params.id);
 </script>
 
 <template>
   <div>
-    <h1 class="p-4 m-4">{{ singlePlace.name }}</h1>
+    <h1 class="p-4 m-4">{{ singleRestaurant.name }}</h1>
 
     <img
-      class="px-4 w-[1500px] h-[400px] rounded"
-      :src="`https://source.unsplash.com/random/?${singlePlace.name},${searchChoice}`"
+      class="px-4 max-h-[400px] rounded"
+      :src="`https://source.unsplash.com/random/?${singleRestaurant.name},${searchChoice}`"
     />
     <div class="p-4 m-4 border bg-green-50 border-vueGreen rounded">
       <h2>Details</h2>
-      <p class="text-lg">{{ singlePlace.formatted_address }}</p>
-      <p class="text-lg">{{ singlePlace.formatted_phone_number }}</p>
+      <p class="text-lg">{{ singleRestaurant.formatted_address }}</p>
+      <p class="text-lg">{{ singleRestaurant.formatted_phone_number }}</p>
     </div>
     <div class="flex justify-between p-4 m-4">
-      <h3 class="text-lg">Rating: {{ singlePlace.rating }}</h3>
+      <h3 class="text-lg">Rating: {{ singleRestaurant.rating }}</h3>
       <button
         @click="
           favoritesStore.addToFavorites(
-            singlePlace.name,
+            singleRestaurant.name,
             route.params.id,
-            singlePlace.formatted_address,
-            singlePlace.formatted_phone_number
+            singleRestaurant.formatted_address,
+            singleRestaurant.formatted_phone_number
           )
         "
         class="button button-secondary"
@@ -43,7 +43,7 @@ placesStore.getSinglePlaceDetails(route.params.id);
     <h3 class="p-4 m-4">Reviews</h3>
     <div
       class="flex border border-gray-100 p-4 m-4 shadow-sm"
-      v-for="review in singlePlace.reviews"
+      v-for="review in singleRestaurant.reviews"
       :key="review.text"
     >
       <p>{{ review.text }}</p>

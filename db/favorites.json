@@ -14,75 +14,6 @@
         "phone_number": "(972) 398-1790"
     },
     {
-        "user": "srodg",
-        "restaurant_name": "Kitaro Sushi",
-        "place_id": "ChIJDRN9I50YTIYRI2NeGvSrzQQ",
-        "address": "2711 W 15th St, Plano, TX 75075, USA",
-        "phone_number": "(972) 596-8206"
-    },
-    {
-        "restaurant_name": "Oda Sushi",
-        "place_id": "ChIJG6uVaGIjTIYRMhlSIPUmElc",
-        "address": "6009 W Parker Rd Suite 137, Plano, TX 75093, USA",
-        "phone_number": "(469) 756-9776"
-    },
-    {
-        "user": "srodg",
-        "restaurant_name": "Sushi Sakana",
-        "place_id": "ChIJ1xODt2YYTIYRaFRvjiHv_cE",
-        "address": "3000 Custer Rd #110, Plano, TX 75075, USA",
-        "phone_number": "(972) 398-1790"
-    },
-    {
-        "user": "srodg",
-        "restaurant_name": "Primo Brothers Pizza",
-        "place_id": "ChIJJS6teuUfTIYRxl-CPVGoHIQ",
-        "address": "9310 Forest Ln # 334, Dallas, TX 75243, USA",
-        "phone_number": "(214) 341-4414"
-    },
-    {
-        "user": "srodg",
-        "restaurant_name": "Kitaro Sushi",
-        "place_id": "ChIJDRN9I50YTIYRI2NeGvSrzQQ",
-        "address": "2711 W 15th St, Plano, TX 75075, USA",
-        "phone_number": "(972) 596-8206"
-    },
-    {
-        "user": "srodg",
-        "restaurant_name": "Wasabi at Porter",
-        "place_id": "ChIJk_Qdmxd344kRfVk6FgMDA44",
-        "address": "2088 Massachusetts Ave, Cambridge, MA 02140, USA",
-        "phone_number": "(617) 945-5001"
-    },
-    {
-        "user": "srodg",
-        "restaurant_name": "Ichiro Sushi",
-        "place_id": "ChIJX3QGzY1844kRp9CzxbX1Lgs",
-        "address": "538 Adams St A, Milton, MA 02186, USA",
-        "phone_number": "(617) 698-8832"
-    },
-    {
-        "user": "srodg",
-        "restaurant_name": "The Nest Cafe",
-        "place_id": "ChIJ13jK-Y08TIYRVfsALl1OhsM",
-        "address": "7777 Warren Pkwy Suite 325, Frisco, TX 75034, USA",
-        "phone_number": "(469) 579-4790"
-    },
-    {
-        "user": "srodg",
-        "restaurant_name": "Eggsquisite Cafe",
-        "place_id": "ChIJnbl8mi89TIYRDwNONM12mQE",
-        "address": "6801 Warren Pkwy #101, Frisco, TX 75034, USA",
-        "phone_number": "(469) 200-8181"
-    },
-    {
-        "user": "srodg",
-        "restaurant_name": "Oki sushi",
-        "place_id": "ChIJv9kAl81_j4AR67N1ECZ2Z70",
-        "address": "1740 Church St, San Francisco, CA 94131, USA",
-        "phone_number": "(415) 817-1094"
-    },
-    {
         "user": "jenny8",
         "restaurant_name": "Shotgun Willie's BBQ",
         "place_id": "ChIJ_9C0fVBDZIgRqyHfscV_kNA",
@@ -105,9 +36,62 @@
     },
     {
         "user": "srodg",
-        "restaurant_name": "Mr. Sushi",
-        "place_id": "ChIJxeoMXDEhTIYRgfT6BvvgolM",
-        "address": "4860 Belt Line Rd, Dallas, TX 75254, USA",
-        "phone_number": "(972) 385-0168"
+        "restaurant_name": "Little Gus Cafe",
+        "place_id": "ChIJPeEvF8oiTIYRovoeqoyA_HE",
+        "address": "6905 Coit Rd #106, Plano, TX 75024, USA",
+        "phone_number": "(972) 433-5033"
+    },
+    {
+        "user": "srodg",
+        "restaurant_name": "Starwood Cafe",
+        "place_id": "ChIJz5RvjtoXTIYRp_GU2tk2xyE",
+        "address": "16100 TX-121 Building A Suite 100, Frisco, TX 75035, USA",
+        "phone_number": "(469) 795-6234"
+    },
+    {
+        "user": "srodg",
+        "restaurant_name": "Sushi Zen",
+        "place_id": "ChIJ2_8s_u08TIYR2fuslH6Q0qs",
+        "address": "3231 Preston Rd Ste.8, Frisco, TX 75034, USA",
+        "phone_number": "(214) 618-0088"
+    },
+    {
+        "restaurant_name": "Depot Cafe",
+        "place_id": "ChIJmeGFeAU8TIYRN-PNWeE_JoE",
+        "address": "6733 Main St, Frisco, TX 75034, USA",
+        "phone_number": "(972) 377-0707"
+    },
+    {
+        "restaurant_name": "Depot Cafe",
+        "place_id": "ChIJmeGFeAU8TIYRN-PNWeE_JoE",
+        "address": "6733 Main St, Frisco, TX 75034, USA",
+        "phone_number": "(972) 377-0707"
+    },
+    {
+        "restaurant_name": "Ferrari's Pizzeria",
+        "place_id": "ChIJCwbwhrUiTIYR-T1ze0L2EtU",
+        "address": "3949 Legacy Dr, Plano, TX 75023, USA",
+        "phone_number": "(972) 491-2777"
+    },
+    {
+        "user": "srodg",
+        "restaurant_name": "Ferrari's Pizzeria",
+        "place_id": "ChIJCwbwhrUiTIYR-T1ze0L2EtU",
+        "address": "3949 Legacy Dr, Plano, TX 75023, USA",
+        "phone_number": "(972) 491-2777"
+    },
+    {
+        "user": "srodg",
+        "restaurant_name": "Ferrari's Pizzeria",
+        "place_id": "ChIJCwbwhrUiTIYR-T1ze0L2EtU",
+        "address": "3949 Legacy Dr, Plano, TX 75023, USA",
+        "phone_number": "(972) 491-2777"
+    },
+    {
+        "user": "srodg",
+        "restaurant_name": "Starwood Cafe",
+        "place_id": "ChIJHeszH4I7TIYR6WN0icp3nxE",
+        "address": "4851 Legacy Dr, Frisco, TX 75034, USA",
+        "phone_number": "(214) 705-1555"
     }
 ]

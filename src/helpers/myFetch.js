@@ -24,7 +24,7 @@ async function makeRequest(url, type, body) {
   }
 }
 
-export default async function useFetch(type, body, url) {
+export default async function myFetch(type, body, url) {
   await makeRequest(type, body, url);
   return { response, error };
 }

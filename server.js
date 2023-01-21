@@ -87,14 +87,14 @@ app.post("/lat-long", (req, res) => {
     .then((json) => res.send(json));
 });
 
-app.post("/find-place", (req, res) => {
+app.post("/find-restaurant", (req, res) => {
   const url = `https://maps.googleapis.com/maps/api/place/textsearch/json?query=${req.body.search}&location=${req.body.lat},${req.body.long}&radius=16000&key=${process.env.GOOGLE_MAPS_API}`;
   const place = fetch(url)
     .then((res) => res.json())
     .then((json) => res.send(json));
 });
 
-app.post("/place-details", (req, res) => {
+app.post("/restaurant-details", (req, res) => {
   const url = `https://maps.googleapis.com/maps/api/place/details/json?fields=name%2Cformatted_address%2Cformatted_phone_number%2Cplace_id%2Crating%2Creview&key=${process.env.GOOGLE_MAPS_API}&placeid=${req.body.place_id}`;
   const place = fetch(url)
     .then((res) => res.json())

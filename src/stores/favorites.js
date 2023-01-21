@@ -1,7 +1,6 @@
 import { defineStore } from "pinia";
 import { useAuthStore } from "./auth";
-import { storeToRefs } from "pinia";
-import useFetch from "../composables/useFetch";
+import myFetch from "../helpers/myFetch";
 
 export const useFavoritesStore = defineStore("favorites", {
   state: () => ({
@@ -10,11 +9,10 @@ export const useFavoritesStore = defineStore("favorites", {
   actions: {
     async getFavorites() {
       const authStore = useAuthStore();
-      const { user } = storeToRefs(authStore);
 
-      useFetch("favorites").then((res) => {
+      myFetch("favorites").then((res) => {
         const userFav = res.response.value.favorites.filter((x) => {
-          return x.user === user.value.username;
+          return x.user === authStore.user.username; // user from authStore
         });
 
         this.userFavorites = userFav;
@@ -23,8 +21,10 @@ export const useFavoritesStore = defineStore("favorites", {
 
     async addToFavorites(restaurant_name, place_id, address, phone_number) {
       const authStore = useAuthStore();
-      const { user } = storeToRefs(authStore);
-      const username = user.value.username;
+      const username = authStore.user.username;
+      if (!username) {
+        alert("Please log in to save favorites");
+      }
       const body = {
         user: username,
         restaurant_name,
@@ -33,7 +33,8 @@ export const useFavoritesStore = defineStore("favorites", {
         phone_number,
       };
 
-      useFetch("favorites", "POST", body).then((res) => {
+      myFetch("favorites", "POST", body).then((res) => {
+        alert("Your favorite has been added");
         return res;
       });
     },

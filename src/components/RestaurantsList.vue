@@ -1,12 +1,12 @@
 <script setup>
-import { usePlacesStore } from "../stores/places";
-const placesStore = usePlacesStore();
+import { useRestaurantsStore } from "../stores/restaurants";
+const restaurantsStore = useRestaurantsStore();
 </script>
 <template>
   <div class="grid grid-cols-3 gap-10 mt-10">
     <div
       class="shadow-xl w-80 border-2 border-gray-100"
-      v-for="restaurant in placesStore.placeDetails"
+      v-for="restaurant in restaurantsStore.restaurantDetails"
       :key="restaurant.name"
     >
       <RouterLink :to="`/restaurant/${restaurant.place_id}`">
@@ -14,7 +14,7 @@ const placesStore = usePlacesStore();
 
         <img
           class="w-80 h-56 rounded"
-          :src="`https://source.unsplash.com/random/?${restaurant.name},${placesStore.searchChoice}`"
+          :src="`https://source.unsplash.com/random/?${restaurant.name},${restaurantsStore.searchChoice}`"
         />
         <div class="p-4">
           <p>{{ restaurant.formatted_address }}</p>
@@ -24,5 +24,3 @@ const placesStore = usePlacesStore();
     </div>
   </div>
 </template>
-
-<style scoped></style>

@@ -1,17 +1,15 @@
 <script setup>
 import { RouterLink, RouterView } from "vue-router";
+import router from "../src/router";
 import { storeToRefs } from "pinia";
 import { useAuthStore } from "./stores/auth.js";
 const authStore = useAuthStore();
 const { user, userFirstName } = storeToRefs(authStore);
 
-// authStore.$subscribe((mutation, state) => {
-//   console.log(state);
-// });
-
-// authStore.$onAction((details) => {
-//   console.log(details);
-// });
+// function logout() {
+//   authStore.$reset();
+//   router.push("/");
+// }
 
 authStore.$onAction(({ name, store, args }) => {
   console.log(`Start "${name}" with params [${args.join(", ")}].`);
@@ -46,7 +44,7 @@ authStore.$onAction(({ name, store, args }) => {
             >Sign In</RouterLink
           >
           <RouterLink
-            v-if="!user"
+            v-if="!user.username"
             to="/register"
             class="button button-secondary"
             >Register</RouterLink
