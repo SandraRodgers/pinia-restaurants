@@ -41,6 +41,7 @@ function greetOwnerPlugin({ store }) {
   });
 }
 
+// We could use $onAction in a plugin to watch for certain state changes, then perform a side effect
 function greetUserPlugin({ store, options }) {
   if (options.greeting && options.greeting.enabled) {
     store.$onAction((action) => {
