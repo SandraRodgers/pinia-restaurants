@@ -14,7 +14,7 @@ const debouncedFn = useDebounceFn(() => {
   restaurantsStore.getRestaurants();
 }, 1000);
 
-function placeSearch() {
+function restaurantSearch() {
   debouncedFn();
 }
 
@@ -59,7 +59,7 @@ watch(searchChoice, (newVal) => {
       <input
         v-if="!loadingMessage"
         v-model="searchChoice"
-        @input="placeSearch"
+        @input="restaurantSearch"
         list="search-options"
         id="search-choice"
         name="search-choice"

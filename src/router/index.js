@@ -44,6 +44,10 @@ const router = createRouter({
   ],
 });
 
+// The below example doesn't use $reset because restaurantsStore is a setup store
+// $reset() does not work for setup stores, only option stores
+// So I've created a function resetRestaurantsStore() that does the same thing
+
 // router.beforeEach((to) => {
 //   const restaurantsStore = useRestaurantsStore();
 //   if (to.name === "home") restaurantsStore.resetRestaurantsStore();
